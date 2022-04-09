@@ -1,0 +1,54 @@
+<h2 mat-dialog-title > GitHub </h2>
+
+<div mat-dialog-content class="inicio">
+  <!-- <p *ngif="user != null">
+    {{ user | json}}
+  </p> -->
+  <mat-progress-spinner
+    color="accent"
+    mode="indeterminate"
+    *ngIf="user == null; else content"
+    >
+  </mat-progress-spinner>
+
+  <ng-template #content>
+      <a [href]="user?.html_url" target="blank" clas="nm">
+        {{ user?.name}}
+      </a>
+
+      <div class="avo">
+
+        <div class="meio">
+          Username: {{ user?.login}} <br>
+          <div class="icone">
+
+            <div class="iconeb">
+              <mat-icon>people_alt </mat-icon> Following: {{ user?.following}}
+              - Followers: {{ user?.followers}}
+            </div>
+
+            <div class="iconec">
+             <mat-icon>person_pin_circle</mat-icon> {{ user?.location }}
+            </div>
+
+          </div>
+        </div>
+
+        <img [src]="user?.avatar_url"  target="_blank">
+      </div>
+
+    <ul>
+      <li *ngFor="let repo of Git">
+        <a [href]="repo?.html_url" target="blank" >
+          {{repo?.name}} </a> <br>
+        Linguagem: {{repo?.language}} <br>
+        Repository: {{repo?.repoository}} <br>
+        Estrela: {{repo?.stargazers_count}}
+
+      </li>
+    </ul>
+
+  </ng-template>
+</div>
+
+

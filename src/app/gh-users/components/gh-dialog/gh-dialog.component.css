@@ -1,0 +1,39 @@
+.inicio{
+  display: flex;
+  flex-direction: column;
+  background:rgb(3, 2, 2);
+  color:white;
+  font-family: cursive;
+}
+
+h2{
+  text-align: center;
+  font-size: 40px;
+  font-family: emoji;
+}
+
+img{
+  border-radius: 300px;
+  width: 200px;
+}
+
+.meio{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3vh;
+}
+
+.icone ,.iconeb, .iconec , .avo{
+  display: flex;
+}
+
+.icone{
+  flex-direction: column;
+}
+
+ul{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-evenly;
+}
